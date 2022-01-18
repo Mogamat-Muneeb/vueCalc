@@ -1,21 +1,88 @@
-let sum='';
+const app = Vue.createApp({
+data() {
+    return { 
+        sum : "",
+        operators : [
+            "1",
+            "2",
+            "3",
+            "+",
+            "4",
+            "5",
+            "6",
+            "-",
+            "7",
+            "8",
+            "9",
+            
+            "0",
+            ".",
+            "/", 
+        ],
 
-function addToSum(operator) {
-    sum = sum + operator;
-    console.log(sum);
-    document.getElementById("output").innerText = sum;
-} 
+    };
+    
 
-function evaluateSum(){
-    sum = eval(sum);
-    document.getElementById("output").innerText = sum;
-}
+},
+    methods:{
+        addToSum(operator) {
+            this.sum += operator
+    },
+        evaluateSum(){
+        this.sum = eval(this.sum)
+    },
+        clearSum(){
+        this.sum = ""
+    },
+}, 
 
-function clearSum(){
-    sum = "";
-    document.getElementById("output").innerText = sum;
-}
-function deleteChar(){
-    sum = sum.slice(0, -1)
-    document.getElementById("output").innerText = sum;
-}
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+app.mount("#app");
+
+
+
+
+
+
+
+// let sum='';
+
+// function addToSum(operator) {
+//     sum = sum + operator;
+//     console.log(sum);
+//     document.getElementById("output").innerText = sum;
+// } 
+
+// function evaluateSum(){
+//     sum = eval(sum);
+//     document.getElementById("output").innerText = sum;
+// }
+
+// function clearSum(){
+//     sum = "";
+//     document.getElementById("output").innerText = sum;
+// }
+// function deleteChar(){
+//     sum = sum.slice(0, -1)
+//     document.getElementById("output").innerText = sum;
+// }

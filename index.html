@@ -6,68 +6,22 @@
     <title>Page Title</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
-    <script src="https://unpkg.com/vue@next" defer></script> 
+    <script src="https://unpkg.com/vue@next"></script>
+    <script src="app.js" defer></script>
 </head>
-<body  class="body">
+<body>
+     <div id="app">
+        <h1>{{ sum }}</h1>
+        <button v-for="operator of operators" @click="addToSum(operator)">
+            {{ operator }}
+        </button>
+        <button @click="evalSum">=</button>
 
-    <h1 class="head">JS CALCULATOR</h1>
-    <div id="container">
-        <div id="screen">
-            <div id="output"></div>
-        </div>
- 
-        <div id="input1">
-         <button class="button" onclick=" addToSum('1')"><span class="font">1</span></button>
-         <button class="button" onclick=" addToSum('2')"><span  class="font">2</span></button>
-         <button class="button" onclick=" addToSum('3')"><span  class="font">3</span></button>
-         <button class="signs" onclick=" addToSum('+')"><span  class="font">+</span></button>
-        </div>
-        <div id="input2">
-         <button class="button" onclick=" addToSum('4')"><span  class="font">4</span></button>
-         <button class="button" onclick=" addToSum('5')"><span  class="font">5</span></button>
-         <button class="button" onclick=" addToSum('6')"><span  class="font">6</span></button>
-         <button class="signs" onclick=" addToSum('-')"><span  class="font">-</span></button> 
-        </div>
-        <div id="input3">
-         <button class="button" onclick=" addToSum('7')"><span  class="font">7</span></button>
-         <button class="button" onclick=" addToSum('8')"><span  class="font">8</span></button>
-         <button class="button" onclick=" addToSum('9')"><span  class="font">9</span></button>
-         <button class="signs" onclick=" addToSum('*')"><span  class="font">x</span></button>
-        </div>
-        <div id="input4">
-         <button class="button" onclick=" addToSum('0')"><span  class="font">0</span></button>
-         <button class="signs" onclick=" addToSum('.')"><span  class="font">.</span></button>
-         <button class="signs" onclick=" evaluateSum('=')"><span  class="font">=</span></button>
-         <button class="signs" onclick=" addToSum('/')"><span  class="font">/</span></button>
-         <button class="button2" onclick="clearSum()"><span  class="font">AL</span></button>
-         <button class="button2"  onclick="deleteChar()"><span  class="font">Del</span></button>
-        </div>
-      
-    </div>
+
+     </div>
+
+
+
     
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <script src='app.js'></script>
 </body>
 </html>
